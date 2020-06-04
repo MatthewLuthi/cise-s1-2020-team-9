@@ -64,7 +64,7 @@ else
         $number = "2";
         $pages = "77--84";
 
-        $practice = :tdd:;
+        $practice = "tdd";
         $author ="proceedingsAnonymous:O7UPDeq-";
         $title = "A prototype empirical evaluation of test driven development - Software Metrics, 2004. Proceedings. 10th International Symposium on";
         $year = "2001";

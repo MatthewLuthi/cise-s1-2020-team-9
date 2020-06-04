@@ -20,9 +20,16 @@
     
 	
 	<form action="search.php" method="post">
-	<label for = "search">Enter your search here:</label>
-			<input type="text" name="search" maxlength="40"/>
-			<br>
-	</form>	
+		<fieldset>
+			<legend>SEER Query</legend>
+			<label for="methodology">Software Engineering practice</label>
+			<select id="methodology" name="methodology">
+				<option value="tdd" selected>Test Driven Development</option>
+				<option value="ci">Continuous Intergration</option>
+				<option value="testauto">Test Automation</option>
+			</select>
+			<br/><input type="submit" value="Submit">
+		</fieldset>
+		</form>
   </body>
 </html>

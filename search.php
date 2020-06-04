@@ -90,6 +90,32 @@ else
         $year = "2009";
         $publisher = "IEEE";
         $month = "mar";
+
+        $practice = "tdd";
+        $citationkey = "article2017arXiv171105082S";
+        $author = "Siniaalto, Maria and Abrahamsson, Pekka";
+        $title = "A Comparative Case Study on the Impact of Test-Driven Development on Program Design and Test Coverage";
+        $journal = "arXiv.org";
+        $year = "2017";
+        $eprint = "1711.05082";
+        $eprinttype = "arxiv";
+        $eprintclass = "cs.SE";
+        $pages = "arXiv:1711.05082";
+        $month = "nov";
+        $annote = "This is author's version of the published paper. The copyright holder's version is accessible at http://ieeexplore.ieee.org/abstract/document/4343755/";
+
+        $practice = "tdd";
+        $citationkey = "article2020arXiv200407524R";
+        $author = "Romano, Simone and Scanniello, Giuseppe and Baldassarre, Maria Teresa and Fucci, Davide and Caivano, Danilo";
+        $title = "Results from a replicated experiment on the affective reactions of novice developers when applying test-driven development,";
+        $journal = "arXiv.org,";
+        $year = "2020,";
+        $eprint = "2004.07524,";
+        $eprinttype = "arxiv,";
+        $eprintclass = "cs.SE,";
+        $pages = "arXiv:2004.07524,";
+        $month = "apr,";
+        $annote ="XP2020";
 		
 		// Set up the SQL command to add the data into the table
 		$query = "insert into articleinfo"

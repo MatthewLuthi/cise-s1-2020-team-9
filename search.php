@@ -26,36 +26,75 @@ if (!$conn)
 else
 {
     //create table before the rest of the code this is for if there are no tables already in the db
-		$db_query = "CREATE TABLE IF NOT EXISTS postStatus
+		$db_query = "CREATE TABLE IF NOT EXISTS articleinfo
 		(
 							practice varchar(50) NOT NULL UNIQUE,
+                            article varchar(50),
 							author varchar(50),
 							title varchar(50),
                             journal varchar(50),
-							Date varchar(25),
+							year varchar(25),
+                            eprint varchar(25),
+                            eprinttype varchar(25),
+                            eprintclass varchar(25),
+                            publisher varchar(25), 
                             volume varchar(50),
                             journalNum number(10),
-                            pages varchar(25)";
+                            pages varchar(25),
+                            annote varchar(25)";
 			
-			$queryResult = mysqli_query($conn, $db_query) or die ("<p> no table created.<p>"
+			$queryResult = mysqli_query($conn, $db_query) or die ("<p> no table created. check values related to year and date<p>"
 			."<p>Error code " . mysqli_errno($conn)
 			. ":" . mysqli_error($conn)) . "</p>";
 
-		//create each entry 
-		$practice    = ;
-        $statusText	= ;
-		$Title = ;
-		$date = ;
-		$permissionType = ;
+		//create each entry hard codded currently
+		$practice = "tdd";
+        $article= "Aniche:er",
+        $author = "Aniche, M F and Testing, MA Gerosa Software and Verification and and and 2010";
+        $title = "Most common mistakes in test-driven development practice: Results from an online survey with developers";
+        $journal = "ieeexplore.ieee.org";
 
-		$selectedPermission = implode(", ",$permissionType);
+        $practice = "tdd";
+        $article = "Janzen:2008fx";
+        $author = "Janzen, D S and Saiedian, H,";
+        $title = "Does Test-Driven Development Really Improve Software Design Quality?";
+        $journal = "Software, IEEE";
+        $year = "2008";
+        $volume = "25";
+        $number = "2";
+        $pages = "77--84";
+
+        $practice = :tdd:;
+        $author ="proceedingsAnonymous:O7UPDeq-";
+        $title = "A prototype empirical evaluation of test driven development - Software Metrics, 2004. Proceedings. 10th International Symposium on";
+        $year = "2001";
+        $month = "aug";
+
+        $practice = "tdd";
+        $article ="2019arXiv190712290R";
+        $author = "Romano, Simone and Fucci, Davide and Baldassarre, Maria Teresa and Caivano, Danilo and Scanniello, Giuseppe";
+        $title = "An Empirical Assessment on Affective Reactions of Novice Developers when Applying Test-Driven Development";
+        $journal = "arXiv.org";
+        $year = "2019";
+        $eprint = "1907.12290";
+        $eprinttype = "arxiv";
+        $eprintclass = "cs.SE";
+        $pages = "arXiv:1907.12290";
+        $month = "jul";
+        $annote = "Accepted for publication at the 20th International Conference on Product-Focused Software Process Improvement (PROFES19)";
+
+        $practice ="tdd";
+        $article = "proceedingsVu:2009do";
+        $title = "Evaluating Test-Driven Development in an Industry-Sponsored Capstone Project";
+        $year = "2009";
+        $publisher = "IEEE";
+        $month = "mar";
 		
-
 		// Set up the SQL command to add the data into the table
-		$query = "insert into postStatus"
-						."(SEpractice, author, Title, Date, volume)"
+		$query = "insert into articleinfo"
+						."(SEpractice, author, title, year, volume)"
 						. "values"
-                        ."('$practice','$statusText','$Title', $date, '$selectedPermission')";
+                        ."('$practice','$statusText','$title', $year, '$selectedPermission')";
                         
     //---------------------------------------------------------------------------------------------------------------------
     // Get data from the form
@@ -88,15 +127,15 @@ else
             echo "<tr>";
             echo "<td>",$row["SEpracticeCode"],"</td>";
             echo "<td>",$row["SEpracticeText"],"</td>";
-            echo "<td>",$row["Title"],"</td>";
-            echo "<td>",$row["Date"],"</td>";
+            echo "<td>",$row["title"],"</td>";
+            echo "<td>",$row["year"],"</td>";
             echo "<td>",$row["volume"]," </td>";
             echo "</tr>";
 
             echo "SEpractice: ",$row["SEpracticeCode"], "<br>";
             echo "SEpractice Code: ",$row["SEpracticeText"],"<br><br>";
-            echo "Share: ",$row["Title"],"<br>";
-            echo "Date Posted: ",$row["Date"],"<br>";
+            echo "Share: ",$row["title"],"<br>";
+            echo "year Posted: ",$row["year"],"<br>";
             echo "volume: ", $row["volume"],"<br>";
             echo "<br><br>-------------------------------------- <br><br>";
         }

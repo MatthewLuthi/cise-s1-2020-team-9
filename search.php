@@ -5,9 +5,11 @@
 </head>
 <body>
     <bibtex src="bibtex/TDD Articles in Bibtex format.bib"></bibtex>
-    <div class="bibtex_display"></div>
+    <!-- <div id="bibtex_display"></div> -->
+    <?php
+    for ($x = 0; $x <= 10; $x++) {
+        echo '<div id="bibtex_display"></div>';
+    }
+    ?>
 </body>
 </html>
-<?php
-
-?>

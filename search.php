@@ -5,7 +5,7 @@
 </head>
 <body>
     <bibtex src="bibtex/TDD Articles in Bibtex format.bib"></bibtex>
-    <div id="bibtex_display"></div>
+    <div class="bibtex_display"></div>
 </body>
 </html>
 <?php

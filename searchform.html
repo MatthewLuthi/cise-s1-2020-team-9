@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SEER Search Form</title>
+	<title>SEER Search Form</title>
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
   </head>
-	<h1>SEER Search Form</h1>
+  <body>
+	  <div class="hero-image-search-form">
+		<div class="hero-search-form-text">
+			<h1>SEER Search Form</h1>
+			<p>Enter a software engineering practice or methodology to bring up research findings</p>
+		</div>
+	  </div>
 	
-    <a href="./index.html">Back to Index</a><br>
-	<a href="./loginform.html">Login</a><br>
+		<div class="topnav">
+			<a class="active" href="searchform.html">Search</a>
+			<a href="./index.html">Return Home</a>
+			<a href="./loginform.html">Login</a>
+		</div>
+    
 	
 	<form action="search.php" method="post">
 	<label for = "search">Enter your search here:</label>
 			<input type="text" name="search" maxlength="40"/>
 			<br>
-			
+	</form>	
   </body>
 </html>

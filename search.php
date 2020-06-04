@@ -25,7 +25,7 @@ if (!$conn)
 }
 else
 {
-    //create table before the rest of the code 
+    //create table before the rest of the code this is for if there are no tables already in the db
 		$db_query = "CREATE TABLE IF NOT EXISTS postStatus
 		(
 							practice varchar(50) NOT NULL UNIQUE,
@@ -41,8 +41,8 @@ else
 			."<p>Error code " . mysqli_errno($conn)
 			. ":" . mysqli_error($conn)) . "</p>";
 
-		// Get data from the form
-		$SEpractice    = ;
+		//create each entry 
+		$practice    = ;
         $statusText	= ;
 		$Title = ;
 		$date = ;
@@ -55,8 +55,9 @@ else
 		$query = "insert into postStatus"
 						."(SEpractice, author, Title, Date, volume)"
 						. "values"
-						."('$SEpractice','$statusText','$Title', $date, '$selectedPermission')";
-    
+                        ."('$practice','$statusText','$Title', $date, '$selectedPermission')";
+                        
+    //---------------------------------------------------------------------------------------------------------------------
     // Get data from the form
     $SEpractice = $_GET["SEpractice"];
 

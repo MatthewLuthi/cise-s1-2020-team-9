@@ -28,31 +28,34 @@ else
     //create table before the rest of the code 
 		$db_query = "CREATE TABLE IF NOT EXISTS postStatus
 		(
-							StatusCode varchar(5) NOT NULL UNIQUE,
-							StatusText varchar(255) NOT NULL,
-							SharePermission varchar(10),
-							Date varchar(10),
-							Permission varchar(50))";
+							practice varchar(50) NOT NULL UNIQUE,
+							author varchar(50),
+							title varchar(50),
+                            journal varchar(50),
+							Date varchar(25),
+                            volume varchar(50),
+                            journalNum number(10),
+                            pages varchar(25)";
 			
 			$queryResult = mysqli_query($conn, $db_query) or die ("<p> no table created.<p>"
 			."<p>Error code " . mysqli_errno($conn)
 			. ":" . mysqli_error($conn)) . "</p>";
 
 		// Get data from the form
-		$statusCode    = $_POST["statuscode"];
-        $statusText	= $_POST["statustext"];
-		$sharePermission= $_POST["share"];
-		$date = $_POST["date"];
-		$permissionType = $_POST["Permission"];
+		$SEpractice    = ;
+        $statusText	= ;
+		$Title = ;
+		$date = ;
+		$permissionType = ;
 
 		$selectedPermission = implode(", ",$permissionType);
 		
 
 		// Set up the SQL command to add the data into the table
 		$query = "insert into postStatus"
-						."(StatusCode, StatusText, SharePermission, Date, Permission)"
+						."(SEpractice, author, Title, Date, volume)"
 						. "values"
-						."('$statusCode','$statusText','$sharePermission', $date, '$selectedPermission')";
+						."('$SEpractice','$statusText','$Title', $date, '$selectedPermission')";
     
     // Get data from the form
     $SEpractice = $_GET["SEpractice"];
@@ -84,16 +87,16 @@ else
             echo "<tr>";
             echo "<td>",$row["SEpracticeCode"],"</td>";
             echo "<td>",$row["SEpracticeText"],"</td>";
-            echo "<td>",$row["SharePermission"],"</td>";
+            echo "<td>",$row["Title"],"</td>";
             echo "<td>",$row["Date"],"</td>";
-            echo "<td>",$row["Permission"]," </td>";
+            echo "<td>",$row["volume"]," </td>";
             echo "</tr>";
 
             echo "SEpractice: ",$row["SEpracticeCode"], "<br>";
             echo "SEpractice Code: ",$row["SEpracticeText"],"<br><br>";
-            echo "Share: ",$row["SharePermission"],"<br>";
+            echo "Share: ",$row["Title"],"<br>";
             echo "Date Posted: ",$row["Date"],"<br>";
-            echo "Permission: ", $row["Permission"],"<br>";
+            echo "volume: ", $row["volume"],"<br>";
             echo "<br><br>-------------------------------------- <br><br>";
         }
         echo "</table>";

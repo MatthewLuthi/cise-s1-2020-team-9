@@ -7,7 +7,7 @@
 <?php
 
 // sql info or use include 'file.inc'
-require_once('conf/sqlinfo.inc.php');
+require_once('conf/sqlinfo.php');
 
 // The @ operator suppresses the display of any error messages
 // mysqli_connect returns false if connection failed, otherwise a connection value
@@ -29,6 +29,7 @@ else
 		$db_query = "CREATE TABLE IF NOT EXISTS articleinfo
 		(
 							practice varchar(50) NOT NULL UNIQUE,
+                            citationkey varchar(50),
                             article varchar(50),
 							author varchar(50),
 							title varchar(50),
@@ -49,7 +50,7 @@ else
 
 		//create each entry hard codded currently
 		$practice = "tdd";
-        $article= "Aniche:er",
+        $article= "Aniche:er";
         $author = "Aniche, M F and Testing, MA Gerosa Software and Verification and and and 2010";
         $title = "Most common mistakes in test-driven development practice: Results from an online survey with developers";
         $journal = "ieeexplore.ieee.org";
@@ -92,9 +93,9 @@ else
 		
 		// Set up the SQL command to add the data into the table
 		$query = "insert into articleinfo"
-						."(SEpractice, author, title, year, volume)"
+						."(SEpractice, article, author, title, year, volume)"
 						. "values"
-                        ."('$practice','$statusText','$title', $year, '$selectedPermission')";
+                        ."('$practice','$article','$author','$title', $year, '$publisher')";
                         
     //---------------------------------------------------------------------------------------------------------------------
     // Get data from the form

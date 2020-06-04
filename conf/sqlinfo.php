@@ -4,10 +4,10 @@
 // please change to your user, password, and db
 // please put it under /home/<user>/conf/
 
-	$sql_host="localhost";
-	$sql_user="root";
-	$sql_pass="";
+	$sql_host="us-cdbr-east-05.cleardb.net";
+	$sql_user="bb34fbef3bbd78";
+	$sql_pass="c35b5bcb";
 	$sql_db="SEER";
-	$sql_tble="";
+	$sql_tble="ArticleInfo";
 ?>
 

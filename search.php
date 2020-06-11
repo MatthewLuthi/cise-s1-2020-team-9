@@ -16,7 +16,9 @@
         $parser = new Parser();
         $parser->addListener($listener);  
     
-        $parser->parseFile('/articles/TDD Articles in Bibtex format.bib'); // or parseFile('/path/to/file.bib')
+        //$parser->parseString($bibtex); // or parseFile('/path/to/file.bib')
+        //$parser->parseFile('articles\test.bib');
+        $parser->parseFile('articles\TDD Articles in Bibtex format.bib');
         $entries = $listener->export();
 
         print_r($entries);

@@ -28,21 +28,21 @@ else
     //create table before the rest of the code this is for if there are no tables already in the db
 		$db_query = "CREATE TABLE IF NOT EXISTS articleinfo
 		(
-							practice varchar(50) NOT NULL UNIQUE,
-                            citationkey varchar(50),
-                            article varchar(50),
-							author varchar(50),
-							title varchar(50),
-                            journal varchar(50),
-							year varchar(25),
-                            eprint varchar(25),
-                            eprinttype varchar(25),
-                            eprintclass varchar(25),
-                            publisher varchar(25), 
-                            volume varchar(50),
-                            journalNum number(10),
-                            pages varchar(25),
-                            annote varchar(25)";
+							practice varchar(50) NOT NULL,
+                            citationkey varchar(200) UNIQUE PRIMARY KEY,
+                            article varchar(200),
+							author varchar(200),
+							title varchar(200),
+                            journal varchar(200),
+							year varchar(200),
+                            eprint varchar(200),
+                            eprinttype varchar(200),
+                            eprintclass varchar(200),
+                            publisher varchar(200), 
+                            volume varchar(200),
+                            journalNum number(100),
+                            pages varchar(200),
+                            annote varchar(200)";
 			
 			$queryResult = mysqli_query($conn, $db_query) or die ("<p> no table created. check values related to year and date<p>"
 			."<p>Error code " . mysqli_errno($conn)

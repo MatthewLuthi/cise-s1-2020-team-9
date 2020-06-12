@@ -26,7 +26,7 @@ if (!$conn)
 else
 {
     //create table before the rest of the code this is for if there are no tables already in the db
-		$db_query = "CREATE TABLE IF NOT EXISTS articleinfo
+		$db_query = "CREATE TABLE IF NOT EXISTS article_info
 		(
 							practice varchar(50) NOT NULL,
                             citationkey varchar(200) UNIQUE PRIMARY KEY,
